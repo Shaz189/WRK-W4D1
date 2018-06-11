@@ -11,18 +11,6 @@ User.destroy_all
 Artwork.destroy_all
 ArtworkShare.destroy_all
 
-
-# User.create(username: Faker::Artist.name)
-# User.create(username: Faker::Artist.name)
-# User.create(username: Faker::Artist.name)
-# User.create(username: Faker::Artist.name)
-# User.create(username: Faker::Artist.name)
-# User.create(username: Faker::Artist.name)
-# User.create(username: Faker::Artist.name)
-# User.create(username: Faker::Artist.name)
-# User.create(username: Faker::Artist.name)
-# User.create(username: Faker::Artist.name)
-
 10.times do
   User.create(username: Faker::Artist.name)
 end
@@ -33,4 +21,8 @@ end
 
 7.times do
   ArtworkShare.create(artwork_id: rand(1..4), viewer_id: rand(1..10))
+end
+
+20.times do
+  Comment.create(author_id: rand(1..10), artwork_id: rand(1..4), text: Faker::DumbAndDumber.quote)
 end

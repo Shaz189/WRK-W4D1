@@ -24,6 +24,9 @@ class Artwork < ApplicationRecord
   through: :artwork_shares,
   source: :viewer
 
+  has_many :comments,
+  dependent: :destroy
+
   def self.artwork_for_user(user_id)
     Artwork
       .left_outer_joins(:artwork_shares)
