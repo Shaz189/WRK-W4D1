@@ -27,10 +27,10 @@ ArtworkShare.destroy_all
   User.create(username: Faker::Artist.name)
 end
 
-4.times do
+10.times do
   Artwork.create(title: Faker::Book.title, artist_id: rand(1..10), image_url: "i'm a url")
 end
 
-4.times do
+7.times do
   ArtworkShare.create(artwork_id: rand(1..4), viewer_id: rand(1..10))
 end
